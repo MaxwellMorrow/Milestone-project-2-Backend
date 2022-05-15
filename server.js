@@ -13,14 +13,25 @@ mongoose.connect(
   }
 );
 
+// models connections
+const User = require("./models/User")
+const Bug = require("./models/Bug")
+
 // middleware
 app.use(cors()); // prevents cors error
 app.use(express.json()); // allows server to parse Json
 app.use(express.urlencoded({ extended: true }));
 
 // ROUTES
-app.get("/", (req, res) => {
-  res.json("Back End Connected!");
+app.get("/", async (req, res) => {
+   try {
+     const Bugs = await Bug.find();
+     console.log(Bugs);
+     res.json(Bugs);
+   } catch (e) {
+     console.log(e.message);
+     res.send(e)
+   }
 });
 
 app.listen(PORT, () => {

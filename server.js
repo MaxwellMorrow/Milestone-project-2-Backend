@@ -45,33 +45,7 @@ app.get("/bugs", async (req, res) => {
 });
 
 
-app.get("/data/seed", (req, res) => {
-  Bug.insertMany([
-    {
-      name: "Count Dracula",
-      priority: "Accountant",
-      details: "Accounting",
-    },
-    {
-      name: "Geordi Leforge",
-      priority: "Software Engineer Manager",
-      details: "Technology",
-    },
-  ]);
-});
 
-
-app.get("/", async (req, res) => {
-  try {
-    res.json("hello from the other side")
-    const Bugs = await Bug.find();
-    console.log(Bugs);
-    res.send(Bugs);
-  } catch (e) {
-    console.log(e.message);
-    res.send(e)
-  }
-});
 
 app.listen(PORT, () => {
   console.log("Bugtracking at", PORT);

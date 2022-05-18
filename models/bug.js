@@ -11,8 +11,6 @@ const bugSchema = new Schema({
 });
 
 
-// Exports
-
 
 // Model
 const Bug = mongoose.model("Bug", bugSchema);

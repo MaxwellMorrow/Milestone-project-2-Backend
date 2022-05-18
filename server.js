@@ -44,10 +44,12 @@ app.get("/bugs", async (req, res) => {
 
 });
 
+// Update 
+//localhost:3000/ticket/
 
+// Delete route
 
-
-app.listen(PORT, () => {
+http: app.listen(PORT, () => {
   console.log("Bugtracking at", PORT);
 });
 

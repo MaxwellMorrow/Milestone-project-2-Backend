@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-    user_id:{ type: Number, required: true },
     name: { type: String, required: true },
     assignedbugs: { type: String, required: true },
 });

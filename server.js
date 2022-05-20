@@ -6,7 +6,7 @@ const app = express();
 // const Bug = require("./models/Bug")
 // const User = require("./models/User")
 const bugsController = require("./controllers/bugs_controller")
-
+const usersController = require("./controllers/user_controller")
 // PORT AND MONGOOSE CONNECTION
 const PORT = process.env.PORT;
 const mongoose = require("mongoose");
@@ -27,6 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/bugs",bugsController)
 
+app.use("/users",usersController)
 
 http: app.listen(PORT, () => {
   console.log("Bugtracking at", PORT);
